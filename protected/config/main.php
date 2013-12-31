@@ -8,20 +8,29 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
+        'theme' =>'classic',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
 
+        // path aliases
+        'aliases' => array(
+            
+            'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'),
+            'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'),
+        ),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'bootstrap.helpers.TbHtml',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
 		'gii'=>array(
+                        'generatorPaths' => array('bootstrap.gii'),
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
@@ -32,6 +41,18 @@ return array(
 
 	// application components
 	'components'=>array(
+            
+                
+            
+                'bootstrap' => array(
+                'class' => 'bootstrap.components.TbApi',   
+                ),
+            
+                // yiiwheels configuration
+                    'yiiwheels' => array(
+                        'class' => 'yiiwheels.YiiWheels',   
+                    ),
+            
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

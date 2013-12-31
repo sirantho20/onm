@@ -636,3 +636,211 @@ Stack trace:
 REQUEST_URI=/onm/index.php?r=gii/model/index
 HTTP_REFERER=http://localhost/onm/index.php?r=gii
 ---
+2013/12/31 13:41:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#9 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/onm/index.php(25): CApplication->run()
+#11 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/admin
+HTTP_REFERER=http://localhost/onm/index.php?r=site/login
+---
+2013/12/31 13:47:01 [error] [exception.CException] exception 'CException' with message 'Property "TbActiveForm.form_layout" is not defined.' in /var/www/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/framework/web/CWidgetFactory.php(161): CComponent->__set('form_layout', 'horizontal')
+#1 /var/www/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(CompoundReportController), 'bootstrap.widge...', Array)
+#2 /var/www/framework/web/CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/onm/protected/views/compoundReport/_form.php(17): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#5 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#6 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#7 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#8 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#9 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#11 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#13 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#14 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#24 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/onm/index.php(25): CApplication->run()
+#26 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
+2013/12/31 15:14:08 [error] [exception.CException] exception 'CException' with message 'CompoundReport and its behaviors do not have a method or closure named "labelEx".' in /var/www/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(227): CComponent->__call('labelEx', Array)
+#1 /var/www/onm/protected/views/compoundReport/_form.php(20): CActiveRecord->__call('labelEx', Array)
+#2 /var/www/onm/protected/views/compoundReport/_form.php(20): CompoundReport->labelEx(Object(CompoundReport), 'gate_and_lock_o...', Array)
+#3 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#4 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#5 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#6 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#7 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#8 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#9 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#11 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#12 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#13 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#20 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#22 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#23 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /var/www/onm/index.php(25): CApplication->run()
+#25 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
+2013/12/31 15:25:36 [error] [exception.CException] exception 'CException' with message 'Property "WhDatePicker.class" is not defined.' in /var/www/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/framework/web/CWidgetFactory.php(161): CComponent->__set('class', 'span6')
+#1 /var/www/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(CompoundReportController), 'yiiwheels.widge...', Array)
+#2 /var/www/framework/web/CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 /var/www/onm/protected/views/compoundReport/_form.php(28): CBaseController->widget('yiiwheels.widge...', Array)
+#4 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#5 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#6 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#7 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#8 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#9 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#11 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#13 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#14 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#24 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/onm/index.php(25): CApplication->run()
+#26 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
+2013/12/31 15:50:47 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbBox" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/framework/YiiBase.php:322
+Stack trace:
+#0 /var/www/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /var/www/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(CompoundReportController), 'bootstrap.widge...', Array)
+#2 /var/www/framework/web/CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/onm/protected/views/compoundReport/_form.php(249): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#5 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#6 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#7 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#8 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#9 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#11 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#13 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#14 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#24 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/onm/index.php(25): CApplication->run()
+#26 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
+2013/12/31 15:53:34 [error] [exception.CException] exception 'CException' with message 'Alias "yiistrap.widgets.box.TbBox" is invalid. Make sure it points to an existing directory or file.' in /var/www/framework/YiiBase.php:347
+Stack trace:
+#0 /var/www/framework/web/CWidgetFactory.php(146): YiiBase::import('yiistrap.widget...', true)
+#1 /var/www/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(CompoundReportController), 'yiistrap.widget...', Array)
+#2 /var/www/framework/web/CBaseController.php(189): CBaseController->createWidget('yiistrap.widget...', Array)
+#3 /var/www/onm/protected/views/compoundReport/_form.php(249): CBaseController->beginWidget('yiistrap.widget...', Array)
+#4 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#5 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#6 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#7 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#8 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#9 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#11 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#13 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#14 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#24 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/onm/index.php(25): CApplication->run()
+#26 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
+2013/12/31 15:54:01 [error] [exception.CException] exception 'CException' with message 'Alias "yiistrap.widgets.box.WhBox" is invalid. Make sure it points to an existing directory or file.' in /var/www/framework/YiiBase.php:347
+Stack trace:
+#0 /var/www/framework/web/CWidgetFactory.php(146): YiiBase::import('yiistrap.widget...', true)
+#1 /var/www/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(CompoundReportController), 'yiistrap.widget...', Array)
+#2 /var/www/framework/web/CBaseController.php(189): CBaseController->createWidget('yiistrap.widget...', Array)
+#3 /var/www/onm/protected/views/compoundReport/_form.php(249): CBaseController->beginWidget('yiistrap.widget...', Array)
+#4 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#5 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#6 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#7 /var/www/onm/protected/views/compoundReport/create.php(20): CController->renderPartial('_form', Array)
+#8 /var/www/framework/web/CBaseController.php(126): require('/var/www/onm/pr...')
+#9 /var/www/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/onm/pr...', Array, true)
+#10 /var/www/framework/web/CController.php(869): CBaseController->renderFile('/var/www/onm/pr...', Array, true)
+#11 /var/www/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/onm/protected/controllers/CompoundReportController.php(79): CController->render('create', Array)
+#13 /var/www/framework/web/actions/CInlineAction.php(49): CompoundReportController->actionCreate()
+#14 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('compoundReport/...')
+#24 /var/www/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/onm/index.php(25): CApplication->run()
+#26 {main}
+REQUEST_URI=/onm/index.php?r=compoundReport/create
+HTTP_REFERER=http://localhost/onm/index.php?r=compoundReport/admin
+---
