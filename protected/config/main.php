@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Maintenance Services Management',
         'theme' =>'classic',
 
 	// preloading 'log' component
@@ -75,11 +75,11 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'dblib:host=SQL5006.Smarterasp.net:1433; dbname=DB_9ABDC9_test',
-//			'emulatePrepare' => true,
-			'username' => 'DB_9ABDC9_test_admin',
-			'password' => 'AFtony19833',
-//			'charset' => 'utf8',
+//			'connectionString' => 'dblib:host=SQL5006.Smarterasp.net:1433; dbname=DB_9ABDC9_test',
+////			'emulatePrepare' => true,
+//			'username' => 'DB_9ABDC9_test_admin',
+//			'password' => 'AFtony19833',
+////			'charset' => 'utf8',
 		),
 		
 		'errorHandler'=>array(

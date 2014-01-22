@@ -1,7 +1,28 @@
+body {
+    //background: url('../images/mainbg.jpg') repeat;
+}
+
 .row {
     margin-left: 0;
     margin-right:0;
 }
+
 .box-lining {
     padding: 5px;
 }
+
+.sticky {
+      position: sticky;
+      top: 10px; /* When the element reaches top: 10px, it becomes fixed. */
+      z-index: 100;
+    }
+    
+.error {
+        color: red !important;
+        border-color: red;
+    }   
+    
+.success {
+        color: green;
+        border-color: green;
+    }

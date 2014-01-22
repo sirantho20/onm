@@ -125,57 +125,57 @@ class CompoundReport extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'gate_and_lock_ok' => 'Gate And Lock Ok',
-			'site_neat_tidy' => 'Site Neat Tidy',
-			'weed_growing' => 'Weed Growing',
-			'fence_in_good_condition' => 'Fence In Good Condition',
-			'gate_and_lock_ok_ACTION' => 'Gate And Lock Ok Action',
-			'gate_and_lock_ok_ACTION_DATE' => 'Gate And Lock Ok Action Date',
+			'gate_and_lock_ok' => 'Are the gates OK, with correct locks?',
+			'site_neat_tidy' => 'Is the Site neat and tidy?',
+			'weed_growing' => 'Are weeds growing on site?',
+			'fence_in_good_condition' => 'Is the fence in good condition?',
+			'gate_and_lock_ok_ACTION' => 'Action',
+			'gate_and_lock_ok_ACTION_DATE' => 'Action Date',
 			'gate_and_lock_ok_FS_COMMENT' => 'Gate And Lock Ok Fs Comment',
-			'site_neat_tidy_ACTION' => 'Site Neat Tidy Action',
-			'site_neat_tidy_ACTION_DATE' => 'Site Neat Tidy Action Date',
+			'site_neat_tidy_ACTION' => 'Action',
+			'site_neat_tidy_ACTION_DATE' => 'Action Date',
 			'site_neat_tidy_FS_COMMENT' => 'Site Neat Tidy Fs Comment',
-			'weed_growing_ACTION' => 'Weed Growing Action',
-			'weed_growing_ACTION_DATE' => 'Weed Growing Action Date',
+			'weed_growing_ACTION' => 'Action',
+			'weed_growing_ACTION_DATE' => 'Action Date',
 			'weed_growing_FS_COMMENT' => 'Weed Growing Fs Comment',
-			'fence_in_good_condition_ACTION' => 'Fence In Good Condition Action',
-			'fence_in_good_condition_ACTION_DATE' => 'Fence In Good Condition Action Date',
+			'fence_in_good_condition_ACTION' => 'Action',
+			'fence_in_good_condition_ACTION_DATE' => 'Action Date',
 			'fence_in_good_condition_FS_COMMENT' => 'Fence In Good Condition Fs Comment',
-			'retaining_walls_condition_cracks' => 'Retaining Walls Condition Cracks',
-			'retaining_walls_condition_cracks_ACTION' => 'Retaining Walls Condition Cracks Action',
-			'retaining_walls_condition_cracks_ACTION_DATE' => 'Retaining Walls Condition Cracks Action Date',
+			'retaining_walls_condition_cracks' => 'Are the retaining walls in good condition? Check for cracks.',
+			'retaining_walls_condition_cracks_ACTION' => 'Action',
+			'retaining_walls_condition_cracks_ACTION_DATE' => 'Action Date',
 			'retaining_walls_condition_cracks_FS_COMMENT' => 'Retaining Walls Condition Cracks Fs Comment',
-			'sign_of_flooding' => 'Sign Of Flooding',
-			'sign_of_flooding_ACTION' => 'Sign Of Flooding Action',
-			'sign_of_flooding_ACTION_DATE' => 'Sign Of Flooding Action Date',
+			'sign_of_flooding' => 'Is there any sign of flooding around the site?',
+			'sign_of_flooding_ACTION' => 'Action',
+			'sign_of_flooding_ACTION_DATE' => 'Action Date',
 			'sign_of_flooding_FS_COMMENT' => 'Sign Of Flooding Fs Comment',
-			'ecg_meter_box_secured' => 'Ecg Meter Box Secured',
-			'ecg_meter_box_secured_ACTION' => 'Ecg Meter Box Secured Action',
-			'ecg_meter_box_secured_ACTION_DATE' => 'Ecg Meter Box Secured Action Date',
+			'ecg_meter_box_secured' => 'Is the ECG/Volta meter box well secured',
+			'ecg_meter_box_secured_ACTION' => 'Action',
+			'ecg_meter_box_secured_ACTION_DATE' => 'Action Date',
 			'ecg_meter_box_secured_FS_COMMENT' => 'Ecg Meter Box Secured Fs Comment',
-			'security_guard_on_site' => 'Security Guard On Site',
-			'security_guard_on_site_ACTION' => 'Security Guard On Site Action',
-			'security_guard_on_site_ACTION_DATE' => 'Security Guard On Site Action Date',
+			'security_guard_on_site' => 'Is the security guard on site?',
+			'security_guard_on_site_ACTION' => 'Action',
+			'security_guard_on_site_ACTION_DATE' => 'Action Date',
 			'security_guard_on_site_FS_COMMENT' => 'Security Guard On Site Fs Comment',
-			'log_book_on_site' => 'Log Book On Site',
-			'log_book_on_site_ACTION' => 'Log Book On Site Action',
-			'log_book_on_site_ACTION_DATE' => 'Log Book On Site Action Date',
+			'log_book_on_site' => 'Is there a log book on site?',
+			'log_book_on_site_ACTION' => 'Action',
+			'log_book_on_site_ACTION_DATE' => 'Action Date',
 			'log_book_on_site_FS_COMMENT' => 'Log Book On Site Fs Comment',
-			'avr_on_site' => 'Avr On Site',
-			'avr_on_site_ACTION' => 'Avr On Site Action',
-			'avr_on_site_ACTION_DATE' => 'Avr On Site Action Date',
+			'avr_on_site' => 'Is there an AVR on site?',
+			'avr_on_site_ACTION' => 'Action',
+			'avr_on_site_ACTION_DATE' => 'Action Date',
 			'avr_on_site_FS_COMMENT' => 'Avr On Site Fs Comment',
-			'avr_operational' => 'Avr Operational',
-			'avr_operational_ACTION' => 'Avr Operational Action',
-			'avr_operational_ACTION_DATE' => 'Avr Operational Action Date',
+			'avr_operational' => 'Is the AVR operational?',
+			'avr_operational_ACTION' => 'Action',
+			'avr_operational_ACTION_DATE' => 'Action Date',
 			'avr_operational_FS_COMMENT' => 'Avr Operational Fs Comment',
-			'fuel_spilage' => 'Fuel Spilage',
-			'fuel_spilage_ACTION' => 'Fuel Spilage Action',
-			'fuel_spilage_ACTION_DATE' => 'Fuel Spilage Action Date',
+			'fuel_spilage' => 'Is there any fuel spillage?',
+			'fuel_spilage_ACTION' => 'Action',
+			'fuel_spilage_ACTION_DATE' => 'Action Date',
 			'fuel_spilage_FS_COMMENT' => 'Fuel Spilage Fs Comment',
-			'installation_works_since_last_visit' => 'Installation Works Since Last Visit',
-			'installation_works_since_last_visit_ACTION' => 'Installation Works Since Last Visit Action',
-			'installation_works_since_last_visit_ACTION_DATE' => 'Installation Works Since Last Visit Action Date',
+			'installation_works_since_last_visit' => 'Has there been any installation work done since last visit?',
+			'installation_works_since_last_visit_ACTION' => 'Action',
+			'installation_works_since_last_visit_ACTION_DATE' => 'Action Date',
 			'installation_works_since_last_visit_FS_COMMENT' => 'Installation Works Since Last Visit Fs Comment',
 			'report_id' => 'Report',
 			'gate_and_lock_ok_FS_COMMENT_DATE' => 'Gate And Lock Ok Fs Comment Date',
@@ -299,4 +299,53 @@ class CompoundReport extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function afterSave() {
+            $this->raiseSiteIssue();
+            parent::afterSave();
+        }
+
+
+        public function raiseSiteIssue()
+        {
+            $attr = $this->attributes;
+            $excempt = array(
+                    'weed_growing',
+                    'sign_of_flooding',
+                    'fuel_spilage'
+                    );
+            foreach ( $attr as $key => $value )
+            {
+                if ( $value == 'n' && !in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+                elseif ( $value == 'y' && in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+            }
+        }
 }

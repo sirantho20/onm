@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List CompoundReport', 'url'=>array('index')),
-	array('label'=>'Manage CompoundReport', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'List CompoundReport', 'url'=>array('index')),
+//	array('label'=>'Manage CompoundReport', 'url'=>array('admin')),
+//);
 ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
