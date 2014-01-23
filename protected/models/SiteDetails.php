@@ -137,4 +137,10 @@ class SiteDetails extends CActiveRecord
             $model = SiteDetails::model()->findAll();
             return CHtml::listData($model, 'site_id', 'site_name');
         }
+        
+        public static function getSiteRegion($site_id)
+        {
+            $re = SiteDetails::model()->find(array('select'=>'region','condition'=>"site_id = '$site_id'"));
+            return $re->region;
+        }
 }

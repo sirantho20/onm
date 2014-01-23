@@ -37,17 +37,28 @@ $('.search-form form').submit(function(){
     ));?>
     <div class="box-lining">
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+<?php
+
+$this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'mc-monthly-report-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'company',
-		'region',
+                array(
+                    'header'=>'Region',
+                    'type'=>'raw',
+                    'value'=>'SiteDetails::getSiteRegion($data->site_id)',
+                ),
 		'site_id',
 		'checked_by',
 		'check_date',
+                array(
+                    'header'=>'Month',
+                    'type'=>'raw',
+                    'value'=>'Yii::app()->dateFormatter->format("MMMM", "$data->check_date")',
+                ),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

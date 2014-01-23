@@ -1,32 +1,28 @@
 <?php
 
 /**
- * This is the model class for table "account_users".
+ * This is the model class for table "contractor_accounts".
  *
- * The followings are the available columns in table 'account_users':
+ * The followings are the available columns in table 'contractor_accounts':
  * @property integer $id
- * @property integer $account_id
- * @property string $first_name
- * @property string $last_name
+ * @property string $account_name
+ * @property string $account_type
  * @property string $email_address
- * @property string $pword
- * @property string $date_added
- * @property string $date_updated
- * @property string $username
  * @property integer $mobile_number
- * @property string $role
+ * @property string $date_added
+ * @property string $dateupdated
  *
  * The followings are the available model relations:
- * @property ContractorAccounts $account
+ * @property AccountUsers[] $accountUsers
  */
-class AccountUsers extends CActiveRecord
+class ContractorAccounts extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'account_users';
+		return 'contractor_accounts';
 	}
 
 	/**
@@ -37,13 +33,12 @@ class AccountUsers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('account_id, first_name, last_name, pword, date_added, date_updated, username, role', 'required'),
-			array('account_id, mobile_number', 'numerical', 'integerOnly'=>true),
-			array('first_name, last_name, email_address, username, role', 'length', 'max'=>50),
-			array('pword', 'length', 'max'=>500),
+			array('account_name, account_type, date_added, dateupdated', 'required'),
+			array('mobile_number', 'numerical', 'integerOnly'=>true),
+			array('account_name, account_type, email_address', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, account_id, first_name, last_name, email_address, pword, date_added, date_updated, username, mobile_number, role', 'safe', 'on'=>'search'),
+			array('id, account_name, account_type, email_address, mobile_number, date_added, dateupdated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +50,7 @@ class AccountUsers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'account' => array(self::BELONGS_TO, 'ContractorAccounts', 'account_id'),
+			'accountUsers' => array(self::HAS_MANY, 'AccountUsers', 'account_id'),
 		);
 	}
 
@@ -66,16 +61,12 @@ class AccountUsers extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'account_id' => 'Account',
-			'first_name' => 'First Name',
-			'last_name' => 'Last Name',
+			'account_name' => 'Account Name',
+			'account_type' => 'Account Type',
 			'email_address' => 'Email Address',
-			'pword' => 'Password',
-			'date_added' => 'Date Added',
-			'date_updated' => 'Date Updated',
-			'username' => 'Username',
 			'mobile_number' => 'Mobile Number',
-			'role' => 'Role',
+			'date_added' => 'Date Added',
+			'dateupdated' => 'Dateupdated',
 		);
 	}
 
@@ -98,16 +89,12 @@ class AccountUsers extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('account_id',$this->account_id);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('account_name',$this->account_name,true);
+		$criteria->compare('account_type',$this->account_type,true);
 		$criteria->compare('email_address',$this->email_address,true);
-		$criteria->compare('pword',$this->pword,true);
-		$criteria->compare('date_added',$this->date_added,true);
-		$criteria->compare('date_updated',$this->date_updated,true);
-		$criteria->compare('username',$this->username,true);
 		$criteria->compare('mobile_number',$this->mobile_number);
-		$criteria->compare('role',$this->role,true);
+		$criteria->compare('date_added',$this->date_added,true);
+		$criteria->compare('dateupdated',$this->dateupdated,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -118,47 +105,41 @@ class AccountUsers extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return AccountUsers the static model class
+	 * @return ContractorAccounts the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
         
-        public static function ListAccountUsers()
+        public static function getAccountTypes()
         {
-            $model = AccountUsers::model()->findAll();
-            return CHtml::listData($model, 'id', 'first_name');
-        }
-        public static function getAccountRoles()
-        {
-            return array(
-              'user'=>'User',
+            $arr = array(
+                'mc'=>'Maintenance Contractor',
                 'fs'=>'Field Supervisor',
-                'cadmin'=>'Contractor Admin',
-                'ops'=>'Operations',
-                'sys'=>'System Admin',
+                'admin'=>'Manager'
             );
+            return $arr;
         }
-        
-        public function beforeValidate() {
+       
+        public function beforeValidate() 
+        {
             if ( $this->isNewRecord )
             {
                 $this->date_added = new CDbExpression('CURRENT_TIMESTAMP');
-                $this->date_updated = new CDbExpression('CURRENT_TIMESTAMP');
+                $this->dateupdated = new CDbExpression('CURRENT_TIMESTAMP');
             }
-            else
+            else 
             {
-                $this->date_updated = new CDbExpression('CURRENT_TIMESTAMP');
+                $this->dateupdated = new CDbExpression('CURRENT_TIMESTAMP');
             }
+            
             return parent::beforeValidate();
         }
         
-        public function beforeSave() {
-            if ( $this->pword != NULL)
-            {
-                $this->pword = CPasswordHelper::hashPassword($this->pword);
-            }
-            return parent::beforeSave();
+        public static function getContractorAccounts()
+        {
+            $model = ContractorAccounts::model()->findAll();
+            return CHtml::listData($model, 'id', 'account_name');
         }
 }

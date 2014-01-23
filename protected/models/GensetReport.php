@@ -275,4 +275,47 @@ class GensetReport extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function raiseSiteIssue()
+        {
+            $attr = $this->attributes;
+            $excempt = array(
+                    'ats_panel_alarms',
+                    'exhaust_system_broken_noisy_lagging',
+                    'fuel_theft_leakage',
+                    );
+            foreach ( $attr as $key => $value )
+            {
+                if ( $value == 'n' && !in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+                elseif ( $value == 'y' && in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+            }
+        }
 }

@@ -63,10 +63,10 @@ class PowerReading extends CActiveRecord
 			'id' => 'ID',
 			'genset_run_hrs' => 'Genset Run Hrs',
 			'fuel_on_site' => 'Fuel On Site',
-			'kw_reading' => 'Kw Reading',
-			'current_phase1' => 'Current Phase1',
-			'current_phase2' => 'Current Phase2',
-			'current_phase3' => 'Current Phase3',
+			'kw_reading' => 'Kwh Reading',
+			'current_phase1' => 'Phase1 Current',
+			'current_phase2' => 'Phase2 Current',
+			'current_phase3' => 'Phase3 Current',
 			'report_id' => 'Report',
 		);
 	}

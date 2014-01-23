@@ -407,6 +407,5 @@
     ));?>
     <div class="box-lining">             
             <?php echo $form->dropDownListControlGroup($model,'installation_works_since_last_visit',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
-            <?php echo $form->textAreaControlGroup($model,'installation_works_since_last_visit_FS_COMMENT',array('rows'=>6,'span'=>8)); ?>
     </div>
    <?php $this->endWidget(); ?>          

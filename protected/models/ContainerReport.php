@@ -350,4 +350,47 @@ class ContainerReport extends CActiveRecord
                 
             }
         }
+        public function raiseSiteIssue()
+        {
+            $attr = $this->attributes;
+            $excempt = array(
+                    'water_insect_intering_container',
+                    'bts_internal_external_alarms',
+                    'rectifier_alarms',
+                    'breaker_tripped_in_mains_db_box',
+                    );
+            foreach ( $attr as $key => $value )
+            {
+                if ( $value == 'n' && !in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+                elseif ( $value == 'y' && in_array($key, $excempt))
+                {
+                    $site_id = $this->report->site_id;
+                    $action = $key.'_ACTION';
+                    $action_date = $key.'_ACTION_DATE';
+                    $issue = new SiteIssues();
+                    $issue->report_id = $this->report_id;
+                    $issue->issue_type = 'compound';
+                    $issue->issue_description = $key;
+                    $issue->issue_action = $this->$action;
+                    $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
+                    $issue->site_id = $site_id;
+                    $issue->issue_date = $this->report->check_date;
+                    $issue->save();
+                }
+            }
+        }
 }

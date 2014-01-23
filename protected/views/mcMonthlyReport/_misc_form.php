@@ -7,7 +7,7 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">
-    <?php echo $form->textFieldControlGroup($model,'access_road_good_condition',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'access_road_good_condition',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'access_road_good_condition_ACTION',array('rows'=>6,'span'=>8)); ?>
     <?php echo $form->labelEx($model,'access_road_good_condition_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
@@ -32,7 +32,7 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">    
-    <?php echo $form->textFieldControlGroup($model,'transformer_leakage',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'transformer_leakage',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'transformer_leakage_ACTION',array('rows'=>6,'span'=>8)); ?>
     <?php echo $form->labelEx($model,'transformer_leakage_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
@@ -57,9 +57,8 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">    
-    <?php echo $form->textFieldControlGroup($model,'used_part_oil_dump',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'used_part_oil_dump',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'used_part_oil_dump_ACTION',array('rows'=>6,'span'=>8)); ?>
-    <?php echo $form->textFieldControlGroup($model,'used_part_oil_dump_ACTION_DATE',array('span'=>5)); ?>
     <?php echo $form->labelEx($model,'used_part_oil_dump_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
     <?php $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
@@ -83,7 +82,7 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">        
-    <?php echo $form->textFieldControlGroup($model,'visible_celtel_billboard',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'visible_celtel_billboard',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'visible_celtel_billboard_ACTION',array('rows'=>6,'span'=>8)); ?>
     <?php echo $form->labelEx($model,'visible_celtel_billboard_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
@@ -109,7 +108,7 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">           
-    <?php echo $form->textFieldControlGroup($model,'ecg_mains_near_site',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'ecg_mains_near_site',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'ecg_mains_near_site_ACTION',array('rows'=>6,'span'=>8)); ?>
     <?php echo $form->labelEx($model,'ecg_mains_near_site_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
@@ -134,7 +133,7 @@
     'htmlOptions' => array('class'=>'bootstrap-widget-table')
     ));?>
     <div class="box-lining">        
-    <?php echo $form->textFieldControlGroup($model,'signs_of_fuel_on_site',array('span'=>5,'maxlength'=>1)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'signs_of_fuel_on_site',array('y'=>'Yes','n'=>'No'), array('required'=>true, 'prompt'=>'choose option..')); ?>
     <?php echo $form->textAreaControlGroup($model,'signs_of_fuel_on_site_ACTION',array('rows'=>6,'span'=>8)); ?>
     <?php echo $form->labelEx($model,'signs_of_fuel_on_site_ACTION_DATE', array('class'=>'control-label')); ?>
     <div class="input-append">
