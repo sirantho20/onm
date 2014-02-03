@@ -15,7 +15,6 @@
   <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-   something goes here.
       <?php
       
       include 'nav.php';

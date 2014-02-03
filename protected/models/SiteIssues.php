@@ -137,4 +137,11 @@ class SiteIssues extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        public function beforeValidate() {
+            if($this->raised_by == '')
+            {
+                $this->raised_by = Yii::app()->user->full_name;
+            }
+            parent::beforeValidate();
+        }
 }

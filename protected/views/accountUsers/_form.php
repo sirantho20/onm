@@ -21,11 +21,14 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-    <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->dropDownListControlGroup($model,'account_id',  ContractorAccounts::getContractorAccounts(),array('span'=>5)); ?>
-
-    <div class="row-fluid">
+        <div class="alert alert-info">
+            <button type="submit" class="btn btn-success"><i class="icon-ok-circle icon-white"></i> Confirm & Save</button>
+            <button type="reset" class="btn btn-warning"><i class="icon-repeat icon-white"></i> Clear Data</button>
+            
+        </div>
+ <?php echo $form->errorSummary($model); ?>        
+ <div class="row-fluid">
         <div class="span4">
             <?php echo $form->textFieldControlGroup($model,'first_name',array('span'=>12,'maxlength'=>50)); ?>
         </div>
@@ -36,7 +39,7 @@
     <div class="row-fluid">
             <?php echo $form->textFieldControlGroup($model,'username',array('span'=>5,'maxlength'=>50)); ?>
             <?php echo $form->passwordFieldControlGroup($model,'pword',array('span'=>5,'maxlength'=>500)); ?>
-            <?php echo $form->dropDownListControlGroup($model,'role',  AccountUsers::getAccountRoles(), array('span'=>5,'maxlength'=>50)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'role',  AccountUsers::getAccountRoles(), array('span'=>5,'maxlength'=>50, 'prompt'=>'choose option...')); ?>
             <?php echo $form->textFieldControlGroup($model,'email_address',array('span'=>5,'maxlength'=>50)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'mobile_number',array('span'=>5)); ?>
@@ -44,12 +47,11 @@
         
 </div>
         
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
-		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
-		)); ?>
-    </div>
+        <div class="alert alert-info">
+            <button type="submit" class="btn btn-success"><i class="icon-ok-circle icon-white"></i> Confirm & Save</button>
+            <button type="reset" class="btn btn-warning"><i class="icon-repeat icon-white"></i> Clear Data</button>
+            
+        </div>
 
     <?php $this->endWidget(); ?>
     </div>

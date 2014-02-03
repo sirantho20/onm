@@ -72,6 +72,9 @@ class LoginForm extends CFormModel
 			return true;
 		}
 		else
+                {
+                    
 			return false;
+                }
 	}
 }

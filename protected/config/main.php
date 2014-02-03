@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Maintenance Services Management',
         'theme' =>'classic',
-
+        'defaultController'=>'login',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -56,6 +56,8 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+                        'class' => 'WebUser',
+                        'loginUrl'=>array('login'),
 		),
 		// uncomment the following to enable URLs in path-format
 		/*

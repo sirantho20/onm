@@ -93,33 +93,33 @@ class Misc extends CActiveRecord
 			'id' => 'ID',
 			'report_id' => 'Report',
 			'access_road_good_condition' => 'Is the access road in good condition?',
-			'access_road_good_condition_ACTION' => 'Access Road Good Condition Action',
-			'access_road_good_condition_ACTION_DATE' => 'Access Road Good Condition Action Date',
+			'access_road_good_condition_ACTION' => 'Action',
+			'access_road_good_condition_ACTION_DATE' => 'Action Date',
 			'access_road_good_condition_FS_COMMENT' => 'Access Road Good Condition Fs Comment',
 			'access_road_good_condition_FS_COMMENT_DATE' => 'Access Road Good Condition Fs Comment Date',
 			'transformer_leakage' => 'Are there any signs of oil leaking from the transformer?',
-			'transformer_leakage_ACTION' => 'Transformer Leakage Action',
-			'transformer_leakage_ACTION_DATE' => 'Transformer Leakage Action Date',
+			'transformer_leakage_ACTION' => 'Action',
+			'transformer_leakage_ACTION_DATE' => 'Action Date',
 			'transformer_leakage_FS_COMMENT' => 'Transformer Leakage Fs Comment',
 			'transformer_leakage_FS_COMMENT_DATE' => 'Transformer Leakage Fs Comment Date',
 			'used_part_oil_dump' => 'Are there any signs of fuel/oil or used parts being spilled/dumped?',
-			'used_part_oil_dump_ACTION' => 'Used Part Oil Dump Action',
-			'used_part_oil_dump_ACTION_DATE' => 'Used Part Oil Dump Action Date',
+			'used_part_oil_dump_ACTION' => 'Action',
+			'used_part_oil_dump_ACTION_DATE' => 'Action Date',
 			'used_part_oil_dump_FS_COMMENT' => 'Used Part Oil Dump Fs Comment',
 			'used_part_oil_dump_FS_COMMENT_DATE' => 'Used Part Oil Dump Fs Comment Date',
 			'visible_celtel_billboard' => 'Are there any visible Celtel billboards locally?',
-			'visible_celtel_billboard_ACTION' => 'Visible Celtel Billboard Action',
-			'visible_celtel_billboard_ACTION_DATE' => 'Visible Celtel Billboard Action Date',
+			'visible_celtel_billboard_ACTION' => 'Action',
+			'visible_celtel_billboard_ACTION_DATE' => 'Action Date',
 			'visible_celtel_billboard_FS_COMMENT' => 'Visible Celtel Billboard Fs Comment',
 			'visible_celtel_billboard_FS_COMMENT_DATE' => 'Visible Celtel Billboard Fs Comment Date',
 			'ecg_mains_near_site' => 'Is there ECG mains power available near the site?',
-			'ecg_mains_near_site_ACTION' => 'Ecg Mains Near Site Action',
-			'ecg_mains_near_site_ACTION_DATE' => 'Ecg Mains Near Site Action Date',
+			'ecg_mains_near_site_ACTION' => 'Action',
+			'ecg_mains_near_site_ACTION_DATE' => 'Action Date',
 			'ecg_mains_near_site_FS_COMMENT' => 'Ecg Mains Near Site Fs Comment',
 			'ecg_mains_near_site_FS_COMMENT_DATE' => 'Ecg Mains Near Site Fs Comment Date',
 			'signs_of_fuel_on_site' => 'Is there any signs of fuel on site?',
-			'signs_of_fuel_on_site_ACTION' => 'Signs Of Fuel On Site Action',
-			'signs_of_fuel_on_site_ACTION_DATE' => 'Signs Of Fuel On Site Action Date',
+			'signs_of_fuel_on_site_ACTION' => 'Action',
+			'signs_of_fuel_on_site_ACTION_DATE' => 'Action Date',
 			'signs_of_fuel_on_site_FS_COMMENT' => 'Signs Of Fuel On Site Fs Comment',
 			'signs_of_fuel_on_site_FS_COMMENT_DATE' => 'Signs Of Fuel On Site Fs Comment Date',
 			'status' => 'Status',
@@ -216,12 +216,13 @@ class Misc extends CActiveRecord
                     $action_date = $key.'_ACTION_DATE';
                     $issue = new SiteIssues();
                     $issue->report_id = $this->report_id;
-                    $issue->issue_type = 'compound';
+                    $issue->issue_type = 'misc';
                     $issue->issue_description = $key;
                     $issue->issue_action = $this->$action;
                     $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
                     $issue->site_id = $site_id;
                     $issue->issue_date = $this->report->check_date;
+                    $issue->raised_by = $this->report->checked_by;
                     $issue->save();
                 }
                 elseif ( $value == 'y' && in_array($key, $excempt))
@@ -231,12 +232,13 @@ class Misc extends CActiveRecord
                     $action_date = $key.'_ACTION_DATE';
                     $issue = new SiteIssues();
                     $issue->report_id = $this->report_id;
-                    $issue->issue_type = 'compound';
+                    $issue->issue_type = 'misc';
                     $issue->issue_description = $key;
                     $issue->issue_action = $this->$action;
                     $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
                     $issue->site_id = $site_id;
                     $issue->issue_date = $this->report->check_date;
+                    $issue->raised_by = $this->report->checked_by;
                     $issue->save();
                 }
             }

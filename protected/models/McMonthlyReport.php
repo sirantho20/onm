@@ -92,7 +92,7 @@ class McMonthlyReport extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+                $criteria->condition = "company = ".  Yii::app()->user->account_id;
 		$criteria->compare('id',$this->id);
 		$criteria->compare('company',$this->company,true);
 		$criteria->compare('region',$this->region,true);
@@ -115,4 +115,8 @@ class McMonthlyReport extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        public function beforeValidate() {
+            $this->company = Yii::app()->user->account_id;
+            return parent::beforeValidate();
+        }
 }

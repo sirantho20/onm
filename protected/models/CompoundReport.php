@@ -329,6 +329,7 @@ class CompoundReport extends CActiveRecord
                     $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
                     $issue->site_id = $site_id;
                     $issue->issue_date = $this->report->check_date;
+                    $issue->raised_by = $this->report->checked_by;
                     $issue->save();
                 }
                 elseif ( $value == 'y' && in_array($key, $excempt))
@@ -344,6 +345,7 @@ class CompoundReport extends CActiveRecord
                     $issue->issue_action_date = strlen($this->$action_date) > 9 ? trim($this->$action_date): NULL;
                     $issue->site_id = $site_id;
                     $issue->issue_date = $this->report->check_date;
+                    $issue->raised_by = $this->report->checked_by;
                     $issue->save();
                 }
             }

@@ -38,7 +38,7 @@
                 );
             ?>
             <?php //echo $form->dropDownListControlGroup($model,'site_id',  SiteDetails::getSiteIDList(),array('span'=>5,'maxlength'=>50)); ?>
-            <?php echo $form->dropDownListControlGroup($model,'checked_by',  AccountUsers::ListAccountUsers(),array('span'=>5,'maxlength'=>50)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'checked_by',  AccountUsers::ListAccountUsers(),array('span'=>5,'maxlength'=>50,'required'=>'required', 'prompt'=>'choose option...')); ?>
             <?php echo $form->labelEx($model,'check_date', array('class'=>'control-label')); ?>
             <div class="input-append">
             <?php $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(

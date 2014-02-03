@@ -27,7 +27,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-    <?php $box = $this->beginWidget('yiiwheels.widgets.box.WhBox', array(
+    <?php 
+    $box = $this->beginWidget('yiiwheels.widgets.box.WhBox', array(
     'title' =>'Monthly Reports',
     'headerIcon' => 'icon-th-list',
     // when displaying a table, if we include bootstra-widget-table class

@@ -41,6 +41,7 @@ class AccountUsers extends CActiveRecord
 			array('account_id, mobile_number', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, email_address, username, role', 'length', 'max'=>50),
 			array('pword', 'length', 'max'=>500),
+                        array('email_address','email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, account_id, first_name, last_name, email_address, pword, date_added, date_updated, username, mobile_number, role', 'safe', 'on'=>'search'),
@@ -127,7 +128,7 @@ class AccountUsers extends CActiveRecord
         
         public static function ListAccountUsers()
         {
-            $model = AccountUsers::model()->findAll();
+            $model = AccountUsers::model()->findAll('account_id = :id',array('id'=>  Yii::app()->user->account_id));
             return CHtml::listData($model, 'id', 'first_name');
         }
         public static function getAccountRoles()

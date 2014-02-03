@@ -1,11 +1,31 @@
-    <div class="navbar">
+<?php
+
+Yii::app()->clientScript->registerScript('search', "
+
+  //  var url = $(location).attr('href');
+    
+  //alert($('a[href=url]').parent().find('a').attr('href'));
+
+
+
+");
+
+?>
+<div class="navbar">
     <div class="navbar-inner">
     
+     <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </a>
+<div class="nav-collapse collapse">
     <ul class="nav">
-    <li class="active"><a href="#">Dashboard</a></li>
-    <li><a href="#">Reports</a></li>
-    <li><a href="#">Site Issues</a></li>
-    <li><a href="#">Supervisor</a></li>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="<?php echo Yii::app()->createAbsoluteUrl('mcmonthlyreport/admin') ?>">Reports</a></li>
+    <li><a href="<?php echo Yii::app()->createAbsoluteUrl('siteissues/admin') ?>">Site Issues</a></li>
+    <li><a href="<?php echo Yii::app()->createAbsoluteUrl('fieldsupervisor') ?>">Supervisor</a></li>
     </ul>
     
     <ul class="nav">
@@ -18,6 +38,10 @@
         </li>
         <li><a href="<?php echo Yii::app()->createAbsoluteUrl('contractoraccounts/admin') ?>">Sys</a></li>
     </ul>
+    <ul class="nav pull-right">
+        <li><a href="<?php echo Yii::app()->createAbsoluteUrl('site/logout'); ?>"><?php if(!Yii::app()->user->isGuest){ echo Yii::app()->user->first_name.' - logout';} ?></a></li>
+    </ul>
+</div>
     </div>
     </div>
 <?php
